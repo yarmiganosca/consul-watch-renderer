@@ -12,9 +12,13 @@ Note: If I'm wrong, and there is a way to make `consul-template` behave simply a
 You use it thusly in a consul watch config file:
 ```json
 {
-  "type": "service",
-  "service": "my-service",
-  "handler": "consul-watch-renderer path/to/template/file path/to/destination"
+  "watches": [
+    {
+      "type": "service",
+      "service": "my-service",
+      "handler": "consul-watch-renderer path/to/template/file path/to/destination"
+    }
+  ]
 }
 ```
 and that's it! If you must use it yourself on the command line (for testing perhaps), here's a way to do that:

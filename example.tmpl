@@ -1,0 +1,5 @@
+upstream {
+{{- range $serviceNode := . }}
+  server {{ $serviceNode.Node.Address }}:{{ $serviceNode.Service.Port -}}
+{{- end }}
+}

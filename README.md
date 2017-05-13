@@ -1,7 +1,7 @@
 ## Turns out, consul-template !:heart: Consul Watches
 
 `consul-template`, for all it's power, isn't the ideal handler for Consul Watches:
-1. It doesn't always render the template, even in `-once` mode. I'm sure the reasons for (sometimes) not doing so are good and make sense, but (again, to my knowledge) there isn't a way to tell `consul-template` "no, don't think about it, just render the template".
+1. It doesn't always render the template, even in `-once` mode. I'm sure the reasons for (sometimes) not doing so are good and make sense, but (to my knowledge) there isn't a way to tell `consul-template` "no, don't think about it, just render the template".
 2. To my knowledge it has no way to read it's data directly from stdin, which is where Watches send their data to handlers.
 3. The added network call (because it can't render from the stdin-provided data) is both unnecessary, and a potential source of race conditions.
 

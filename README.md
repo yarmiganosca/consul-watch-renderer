@@ -21,7 +21,7 @@ You use it thusly in a consul watch config file:
   ]
 }
 ```
-and that's it! If you must use it yourself on the command line (for testing perhaps), here's a way to do that:
+and that's it! If you must use it yourself on the command line (for testing a particular template perhaps), here's a way to do that:
 ```shell
 $ consul-watch-renderer template destination < <(cat file.json)
 ```
